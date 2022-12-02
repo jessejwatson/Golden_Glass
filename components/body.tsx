@@ -13,7 +13,7 @@ export default function Body() {
           <h1 className='text-3xl font-semibold'>Jesse Watson</h1>
           <p className='text-c-grey'>
             I am a uni student studying at RMIT Online on the Gold Coast. I
-            love to code (Java, JS, React)and write blog posts. I also have
+            love to code (Java, JS, React) and write blog posts. I also have
             other hobbies; click below to find out more...
           </p>
           <div className='pt-6'>
