@@ -9,7 +9,7 @@ export default function Body() {
   return (
     <div className='px-16 flex justify-center content-center'>
         <div className='max-w-md'>
-          <p className='text-c-green'>Hi, I'm</p>
+          <p className='text-c-green'>Hi, I&apos;m</p>
           <h1 className='text-3xl font-semibold'>Jesse Watson</h1>
           <p className='text-c-grey'>
             I am a uni student studying at RMIT Online on the Gold Coast. I
