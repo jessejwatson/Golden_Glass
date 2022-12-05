@@ -4,11 +4,21 @@ import styles from '../styles/Home.module.css'
 
 // Components
 import NavBar from '../components/navBar'
+import BodyAboutMe from '../components/body-aboutMe'
+import FooterIcons from '../components/footerIcons'
 
-export default function Body() {
+export default function AboutMe() {
   return (
-    <div className='px-16 flex justify-center content-center'>
+    <div className='h-auto scrollbar-thin scrollbar-track-c-charcoal scrollbar-thumb-c-blue'>
+      <div className='font-FiraCode bg-gradient-to-br from-c-charcoal to-c-blue text-c-white text-sm md:text-base xl:text-lg'>
         
+        <NavBar/>
+
+        <BodyAboutMe/>
+
+        <FooterIcons/>
+
+      </div>
     </div>
   )
 }

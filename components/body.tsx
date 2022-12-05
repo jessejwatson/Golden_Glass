@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 
 // Components
 import NavBar from '../components/navBar'
+import Link from 'next/link'
 
 export default function Body() {
   return (
@@ -17,7 +18,9 @@ export default function Body() {
             other hobbies; click below to find out more...
           </p>
           <div className='pt-6'>
-            <button className='bg-c-charcoal p-3 border-2 border-c-white text-c-white oldSchoolBtn hover:text-c-green hover:bg-c-blue hover:border-c-green'>More about me</button>
+            <Link href={'/aboutMe'}>
+              <button className='bg-c-charcoal p-3 border-2 border-c-white text-c-white oldSchoolBtn hover:text-c-green hover:bg-c-blue hover:border-c-green'>More about me</button>
+            </Link>
           </div>
         </div>
     </div>

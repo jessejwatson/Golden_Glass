@@ -16,7 +16,7 @@ export default function Home() {
             <NavBar/>
           </div>
 
-          <div className=''>
+          <div className='animate-fade-in-up'>
             <Body/>
           </div>
 
