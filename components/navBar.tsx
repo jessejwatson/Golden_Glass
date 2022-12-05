@@ -11,8 +11,8 @@ export default function NavBar() {
         <Link href="/"><h1 className='text-3xl font-normal'>Jess_W;</h1></Link>
         <div className=''>
             <div className='flex flex-col md:flex-row'>
-                <Link href={''} className='hover:font-normal'><p><span className='text-c-green'>01.</span> Blog</p></Link>
-                <Link href={''} className='hover:font-normal md:pl-8'><p><span className='text-c-green'>02.</span> Projects</p></Link>
+                <Link href={'/blogList'} className='hover:font-normal'><p><span className='text-c-green'>01.</span> Blog</p></Link>
+                <Link href={'/projectsList'} className='hover:font-normal md:pl-8'><p><span className='text-c-green'>02.</span> Projects</p></Link>
             </div>
         </div>
       </div>
