@@ -20,6 +20,15 @@ a {
   box-sizing: border-box;
 }
 
+.externalLink {
+  color: #5AC494;
+  text-decoration: none;
+}
+
+.externalLink:hover {
+  text-decoration: underline;
+}
+
 .oldSchoolBtn {
   box-shadow: -6px 6px #B3B4BD;
 }
@@ -27,4 +36,14 @@ a {
 .oldSchoolBtn:active {
   box-shadow: -6px 4px #818188;
   transform: translateY(4px);
+}
+
+img {
+  box-shadow: -6px 6px #000;
+  border-radius: 1rem;
+}
+
+img:hover {
+  box-shadow: none;
+  transform: translateY(6px)
 }
