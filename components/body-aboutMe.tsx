@@ -40,16 +40,6 @@ export default function BodyAboutMe() {
         </section>
 
         <section className='pb-8'>
-          <h2 className='text-xl text-c-green'>Where it all began...</h2>
-          <p className='text-c-grey'>
-          I grew up on the southern end of the Gold Coast in the Tweed Shire. I started
-          my education in a public primary school. However, since my folks were teachers
-          I was homeschooled until grade 10. I really enjoyed this experience and has led
-          me to aim for a remote job in the future.
-          </p>
-        </section>
-
-        <section className='pb-8'>
           <div className='p-10'>
             <Image className='mx-auto' src={tiling} alt={'Jesse Tiling'} width={300}/>
           </div>
