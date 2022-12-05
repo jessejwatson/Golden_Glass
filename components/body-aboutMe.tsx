@@ -105,9 +105,9 @@ export default function BodyAboutMe() {
           In my school years I played a lot of basketball. I was never into any other
           sport as a kid. I never joined a team, but I went down to the local PCYC
           every week for a lesson and quick game.<br/>
-          In the past year I have gotten into mountain biking. I ride the local <a className='externalLink' href={'https://goo.gl/maps/bssPdKvUMUjArwgKA'} target={'_blank'}>Currumbin
+          In the past year I have gotten into mountain biking. I ride the local <a className='externalLink' href={'https://goo.gl/maps/bssPdKvUMUjArwgKA'} target={'_blank'} rel="noreferrer">Currumbin
           Border Trails</a> regularly. In the past month I have been initiated into the
-          climbing community in an indoor climbing gym in Robina on the Gold Coast — <a className='externalLink' href={'https://goo.gl/maps/xJtPu9t5wNZ5qVnC8'} target={'_blank'}>Alpine</a>.
+          climbing community in an indoor climbing gym in Robina on the Gold Coast — <a className='externalLink' href={'https://goo.gl/maps/xJtPu9t5wNZ5qVnC8'} target={'_blank'} rel="noreferrer">Alpine</a>.
           </p>
         </section>
 
