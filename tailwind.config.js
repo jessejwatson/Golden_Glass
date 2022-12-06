@@ -15,6 +15,7 @@ module.exports = {
     extend: {
       fontFamily: {
         FiraCode: ["Fira Code"],
+        CormorantG: ["Cormorant Garamond"]
       },
       keyframes: {
         'fade-in-down': {

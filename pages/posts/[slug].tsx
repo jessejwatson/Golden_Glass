@@ -66,9 +66,9 @@ export async function getStaticProps({ params }) {
 
 export default function BlogPost({ post }) {
     return (
-        <main className='h-full'>
+        <main className='min-h-screen'>
             <div className='font-FiraCode bg-gradient-to-br from-c-charcoal to-c-blue text-c-white h-full grid grid-flow-row'>
-                <section className='hidden md:block pb-8'>
+                <section className='hidden md:block'>
                     <NavBar/>
                 </section>
 
@@ -78,10 +78,12 @@ export default function BlogPost({ post }) {
                         <img className='coverImg p-2 object-cover w-full h-80 max-w-6xl' src={post.coverImage.url}/>
                     </div>
 
-                    <div className='px-4 -mt-7 max-w-6xl flex justify-between'>
-                        <Link href={'/blogList'}>
-                            <div className='p-1.5 bg-c-white rounded-full w-fit hover:translate-y-1 active:opacity-90'><AiOutlineArrowLeft color='#221D23' size={25}/></div>
-                        </Link>
+                    <div className='px-4 -mt-7 max-w-6xl mx-auto flex justify-between'>
+                        <div className=''>
+                            <Link href={'/blogList'}>
+                                <div className='p-1.5 bg-c-white rounded-full w-fit hover:translate-y-1 active:opacity-90'><AiOutlineArrowLeft color='#221D23' size={25}/></div>
+                            </Link>
+                        </div>
                         <div className='flex gap-x-4'>
                             <Link href={''}>
                                 <div className='p-1.5 bg-c-white rounded-full w-fit hover:translate-y-1 active:opacity-90'><AiOutlineShareAlt color='#221D23' size={25}/></div>
@@ -95,14 +97,17 @@ export default function BlogPost({ post }) {
 
                 {/* Title and content */}
                 <section className='px-10 pt-5 pb-5 flex justify-center'>
-                    <div>
-                        <h1 className='text-xl'>{post.title}</h1>
-                        <div className='max-w-xl' dangerouslySetInnerHTML={{ __html: post.content.html }}></div>
+                    <div className='font-CormorantG'>
+                        <h1 className='text-2xl text-c-green pb-6'>Note: blog is in alpha. Share and Like buttons are not functional.</h1>
+                        <h1 className='text-4xl pb-2'>{post.title}</h1>
+                        <div className='max-w-3xl'>
+                            <div dangerouslySetInnerHTML={{ __html: post.content.html }} className={styles.content}></div>
+                        </div>
                     </div>
                 </section>
 
                 {/* Socials */}
-                <section className={styles.content}>
+                <section>
                     <FooterIcons/>
                 </section>
 

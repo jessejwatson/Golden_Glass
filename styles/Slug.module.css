@@ -1,3 +1,83 @@
 .content h1 {
-    color: red;
+    padding-top: 1.7rem;
+    font-size: 1.8rem;
+    color: #5AC494;
+}
+
+.content h3 {
+    padding-bottom: 1.7rem;
+    font-size: 1.4rem;
+    color: #B3B4BD;
+}
+
+.content p {
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    padding-bottom: 1.7rem;
+}
+
+.content a {
+    text-decoration: underline;
+}
+
+.content a:hover {
+    text-decoration: none;
+}
+
+.content ul {
+    font-size: 1.3rem;
+    list-style-type: disc;
+    padding-bottom: 1.7rem;
+    padding-left: 1.8rem;
+}
+
+.content ol {
+    font-size: 1.3rem;
+    list-style-type: numeric;
+    padding-bottom: 1.7rem;
+    padding-left: 1.8rem;
+}
+
+.content img {
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content blockquote {
+    border-left: 3px solid #5AC494;
+    border-radius: .2rem;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+.content blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+.content blockquote p {
+    display: inline;
+}
+
+.content pre {
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
+    background-color: #221D23;
+    border-color: #B3B4BD;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.content code {
+    font-family: Monaco, monospace;
+    padding: 0.7em;
+    letter-spacing: -0.05em;
+    word-break: normal;
+    overflow: scroll;
 }
