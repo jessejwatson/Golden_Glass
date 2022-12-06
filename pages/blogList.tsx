@@ -50,7 +50,7 @@ export default function BlogList({ posts }) {
           <main className='pt-10'>
             <div className="flex flex-wrap flex-col gap-y-10 content-center">
               {posts.map((post) => (
-                <BlogCard key={'key'} id={post.id} title={post.title} publishDate={post.publishDate} slug={post.slug} contentHTML={post.content.html} authorName={post.author.name} avatarURL={post.author.avatar.url} coverImageURL={post.coverImage.url}/>
+                <BlogCard key={'key'} title={post.title} publishDate={post.publishDate} slug={post.slug} contentHTML={post.content.html} authorName={post.author.name} avatarURL={post.author.avatar.url} coverImageURL={post.coverImage.url}/>
               ))}
             </div>
           </main>

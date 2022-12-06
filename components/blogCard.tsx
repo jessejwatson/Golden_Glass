@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { AiFillRightCircle } from 'react-icons/ai'
 
 
-export default function BlogCard({id, title, publishDate, slug, contentHTML, authorName, avatarURL, coverImageURL}) {
+export default function BlogCard({title, publishDate, slug, contentHTML, authorName, avatarURL, coverImageURL}) {
   return (
     <div>
         <Link href={'/posts/' + slug}>
