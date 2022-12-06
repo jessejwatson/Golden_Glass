@@ -40,7 +40,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function BlogList({ posts }) {
+export default function BlogList({ posts }: {posts:any[]}) {
     return (
       <div className='h-screen'>
         <div className='font-FiraCode bg-gradient-to-br from-c-charcoal to-c-blue text-c-white h-full'>

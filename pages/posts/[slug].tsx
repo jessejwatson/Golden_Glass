@@ -42,7 +42,7 @@ const SLUGLIST = gql`
 `;
   
 export async function getStaticPaths() {
-    const { posts } = await graphcms.request(SLUGLIST);
+    const { posts }: {posts:Array<any>} = await graphcms.request(SLUGLIST);
 
     return {
         paths: posts.map((post) => ({ params: { slug: post.slug } })),
@@ -51,7 +51,7 @@ export async function getStaticPaths() {
 }
 
   
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: {params:any}) {
     const slug = params.slug;
     const data = await graphcms.request(QUERY, {slug});
     const post = data.post;
@@ -64,7 +64,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function BlogPost({ post }) {
+export default function BlogPost({ post }: {post:any}) {
     return (
         <main className='min-h-screen'>
             <div className='font-FiraCode bg-gradient-to-br from-c-charcoal to-c-blue text-c-white h-full grid grid-flow-row'>
