@@ -75,7 +75,7 @@ export default function BlogPost({ post }) {
                 {/* Cover */}
                 <section>
                     <div className='flex justify-center'>
-                        <img className='coverImg p-2 object-cover w-full h-80 max-w-6xl' src={post.coverImage.url}/>
+                        <img className='coverImg p-2 object-cover w-full h-80 max-w-6xl' src={post.coverImage.url} alt={'Cover Image'}/>
                     </div>
 
                     <div className='px-4 -mt-7 max-w-6xl mx-auto flex justify-between'>
