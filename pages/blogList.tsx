@@ -1,5 +1,6 @@
 import { GraphQLClient, gql } from 'graphql-request'
 import BlogCard from "../components/blogCard";
+import NavBar from '../components/navBar';
 
 export async function getStaticProps() {
   const graphcms = new GraphQLClient(
@@ -43,7 +44,10 @@ export default function BlogList({ posts }) {
     return (
       <div className='h-screen'>
         <div className='font-FiraCode bg-gradient-to-br from-c-charcoal to-c-blue text-c-white h-full'>
-          <main>
+          <div>
+            <NavBar/>
+          </div>
+          <main className='pt-10'>
             <div className="flex flex-wrap flex-col gap-y-10 content-center">
               {posts.map((post) => (
                 <BlogCard id={post.id} title={post.title} publishDate={post.publishDate} slug={post.slug} contentHTML={post.content.html} authorName={post.author.name} avatarURL={post.author.avatar.url} coverImageURL={post.coverImage.url}/>
