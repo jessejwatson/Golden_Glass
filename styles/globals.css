@@ -40,10 +40,19 @@ a {
 
 img {
   box-shadow: -6px 6px #000;
-  border-radius: 1rem;
+  border-radius: .5rem;
 }
 
 img:hover {
   box-shadow: none;
   transform: translateY(6px)
+}
+
+.coverImg {
+  box-shadow: none;
+  border-radius: 1.1rem
+}
+
+.coverImg:hover {
+  transform: none;
 }
