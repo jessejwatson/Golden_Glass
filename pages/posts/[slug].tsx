@@ -115,7 +115,7 @@ export default function BlogPost({ post }: {post:any}) {
                                 </div>
                             </div>
                             <h1 className='text-4xl pb-2'>{post.title}</h1>
-                            <div className='max-w-3xl'>
+                            <div className='w-screen max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl'>
                                 <div dangerouslySetInnerHTML={{ __html: post.content.html }} className={styles.content}></div>
                             </div>
                         </div>
