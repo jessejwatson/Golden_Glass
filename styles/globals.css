@@ -57,3 +57,12 @@ img:hover {
 .coverImg:hover {
   transform: none;
 }
+
+.flatImg {
+  box-shadow: none;
+  border-radius: .4rem
+}
+
+.flatImg:hover {
+  transform: none;
+}

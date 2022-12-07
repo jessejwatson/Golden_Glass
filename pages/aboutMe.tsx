@@ -9,7 +9,7 @@ import FooterIcons from '../components/footerIcons'
 
 export default function AboutMe() {
   return (
-    <div className='h-auto scrollbar-thin scrollbar-track-c-charcoal scrollbar-thumb-c-blue'>
+    <div className='h-screen min-h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-c-green scrollbar-track-c-blue'>
       <div className='font-FiraCode bg-gradient-to-br from-c-charcoal to-c-blue text-c-white text-sm md:text-base xl:text-lg'>
         
         <NavBar/>
