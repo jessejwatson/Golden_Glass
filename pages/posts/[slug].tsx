@@ -75,7 +75,7 @@ export default function BlogPost({ post }: {post:any}) {
                 <div>
 
                     {
-                        show && <div className='flex flex-col justify-center items-center h-screen w-screen fixed bg-c-blue bg-opacity-50'>
+                        show && <div className='flex flex-col justify-center items-center h-screen w-screen fixed bg-c-blue bg-opacity-50' onClick={()=>setShow(!show)}>
                                     <div className='flex flex-col justify-center items-center bg-gradient-to-br from-c-charcoal to-c-blue shadow-2xl py-10 px-24 rounded-xl gap-y-8'>
                                         <button className='hover:bg-c-blue active:opacity-90 border-c-green border-2 text-c-green rounded-full py-2 px-5' onClick={()=>setShow(!show)}>Close</button>
                                         <ShareScreen slug={post.slug} title={post.title}/>
