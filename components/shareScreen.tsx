@@ -16,7 +16,7 @@ export default function ShareScreen({ slug, title }: {slug:string, title:string}
   return (
     <div className="flex gap-x-6">
         <PocketShareButton
-            url={"golden-glass.vercel.app/posts/" + slug}
+            url={"https://golden-glass.vercel.app/posts/" + slug}
             title={title}
             blankTarget={true}
         >
@@ -24,7 +24,7 @@ export default function ShareScreen({ slug, title }: {slug:string, title:string}
         </PocketShareButton>
 
         <TwitterShareButton
-            url={"golden-glass.vercel.app/posts/" + slug}
+            url={"https://golden-glass.vercel.app/posts/" + slug}
             title={title}
             blankTarget={true}
         >
@@ -32,7 +32,7 @@ export default function ShareScreen({ slug, title }: {slug:string, title:string}
         </TwitterShareButton>
 
         <FacebookShareButton
-            url={"golden-glass.vercel.app/posts/" + slug}
+            url={"https://golden-glass.vercel.app/posts/" + slug}
             quote={title}
             blankTarget={true}
         >
@@ -40,7 +40,7 @@ export default function ShareScreen({ slug, title }: {slug:string, title:string}
         </FacebookShareButton>
 
         <EmailShareButton
-            url={"golden-glass.vercel.app/posts/" + slug}
+            url={"https://golden-glass.vercel.app/posts/" + slug}
             subject={title}
             blankTarget={true}
         >
