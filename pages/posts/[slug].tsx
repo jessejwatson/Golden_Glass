@@ -85,9 +85,12 @@ export async function getStaticProps({ params }: {params:any}) {
 }
 
 export default function BlogPost({ post }: {post:any}) {
+    let likeIcon = <AiOutlineLike color='#221D23' size={25}/>
     const [show, setShow] = useState(false)
     const { data: session } = useSession()
-    let likeIcon = <AiOutlineLike color='#221D23' size={25}/>
+    const id = post.id
+    const likes:any[] = post.likes
+    let numLikes = likes.length
 
     if (post.likes?.includes(session?.user?.email)) {
         likeIcon = <AiFillLike color='#221D23' size={25}/>
@@ -95,18 +98,24 @@ export default function BlogPost({ post }: {post:any}) {
         likeIcon = <AiOutlineLike color='#221D23' size={25}/>
     }
 
+    function changeLikeIcon() {
+        if (likeIcon == <AiOutlineLike color='#221D23' size={25}/>) {
+            likeIcon = <AiFillLike color='#221D23' size={25}/>
+        } else {
+            likeIcon = <AiOutlineLike color='#221D23' size={25}/>
+        }
+    }
+
     function likeBtn() {
         // save slug for later
         localStorage.setItem("postSlug", post.slug)
-        const id = post.id
-        const likes:any[] = post.likes
 
         // if user logged in, add like to article; else login
         if (!session) {
             router.push('/login')
         } else if (post.likes.includes(session.user?.email)) {
             // user already liked post, unlike
-            const index = likes.indexOf(session.user?.email)
+            const index = post.likes.indexOf(session.user?.email)
             likes.splice(index)
             graphcms.request(LIKEPOST, {id, likes})
         } else {
@@ -114,6 +123,7 @@ export default function BlogPost({ post }: {post:any}) {
             likes.push(session.user?.email)
             graphcms.request(LIKEPOST, {id, likes})
         }
+
     }
 
     return (
@@ -171,8 +181,13 @@ export default function BlogPost({ post }: {post:any}) {
                                     </div>
                                 </div>
                                 
-                                <div className='my-auto'>
-                                    <p className='text-xl'>{post.publishDate}</p>
+                                <div>
+                                    <div className='my-auto text-c-grey'>
+                                        <p>Likes: <span className='text-c-green'>{numLikes}</span></p>
+                                    </div>
+                                    <div className='my-auto'>
+                                        <p className='text-xl'>{post.publishDate}</p>
+                                    </div>
                                 </div>
                             </div>
                             <h1 className='text-4xl pb-2'>{post.title}</h1>

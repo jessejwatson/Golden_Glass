@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function NavBar() {
   return (
-    <div className='font-FiraCode text-c-white px-4 pt-2 animate-fade-in-down'>
+    <div className='font-FiraCode text-c-white px-2 pt-2 animate-fade-in-down'>
       
       <div className='flex justify-between p-7 bg-c-blue bg-opacity-50 rounded-2xl font-semibold shadow-lg max-w-7xl hover:shadow-2xl m-auto'>
         <Link className='my-auto' href="/"><h1 className='text-3xl font-normal'>Jess_W;</h1></Link>
