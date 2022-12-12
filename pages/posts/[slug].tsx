@@ -106,12 +106,13 @@ export default function BlogPost({ post }: {post:any}) {
             router.push('/login')
         } else if (post.likes.includes(session.user?.email)) {
             // user already liked post, unlike
-            console.log('within else if')
+            const index = likes.indexOf(session.user?.email)
+            likes.splice(index)
+            graphcms.request(LIKEPOST, {id, likes})
         } else {
             // user not yet liked post, like
             likes.push(session.user?.email)
             graphcms.request(LIKEPOST, {id, likes})
-            console.log('within else')
         }
     }
 
