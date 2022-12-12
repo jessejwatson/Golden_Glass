@@ -34,6 +34,7 @@ const QUERY = gql
       coverImage {
         url
       }
+      likes
     }
   }
 `;
@@ -46,19 +47,18 @@ const SLUGLIST = gql`
     }
 `;
 
-const LIKEDPOSTS = gql`
-  query ($id: ID!) {
-    posts (where: { id: $id }) {
-      likes
-    }
-  }
-`;
 
 const LIKEPOST = gql`
-    mutation ($id: ID!, $username: [String!]) {
-        updatePost(id: $id, username: $username) {
-        }
+  mutation likePost($id: ID!, $likes: [String!]) {
+    updatePost(where: {id: $id}, data: {likes: $likes}) {
+      id
+      likes
     }
+    publishPost(where: {id: $id}, to: [PUBLISHED]) {
+      id
+      likes
+    }
+  }  
 `;
   
 export async function getStaticPaths() {
@@ -80,7 +80,7 @@ export async function getStaticProps({ params }: {params:any}) {
     props: {
       post,
     },
-    revalidate: 10,
+    revalidate: 1,
   };
 }
 
@@ -89,36 +89,29 @@ export default function BlogPost({ post }: {post:any}) {
     const { data: session } = useSession()
     let likeIcon = <AiOutlineLike color='#221D23' size={25}/>
 
-    async function loadLikes() {
-        // get array of accounts
-        const id = post.id
-        const likes: string[] = await graphcms.request(LIKEDPOSTS, {id})
-        console.log(likes)
-
-        // if logged in user in array, like btn with fill;
-        // else, like btn outline
-        let email = session?.user?.email
-        if (likes.includes(email)) {
-            likeIcon = <AiFillLike color='#221D23' size={25}/>
-            console.log('within if')
-        } else {
-            likeIcon = <AiOutlineLike color='#221D23' size={25}/>
-        }
-
+    if (post.likes?.includes(session?.user?.email)) {
+        likeIcon = <AiFillLike color='#221D23' size={25}/>
+    } else {
+        likeIcon = <AiOutlineLike color='#221D23' size={25}/>
     }
 
     function likeBtn() {
         // save slug for later
         localStorage.setItem("postSlug", post.slug)
         const id = post.id
-        const username = session?.user?.email
+        const likes:any[] = post.likes
 
         // if user logged in, add like to article; else login
         if (!session) {
             router.push('/login')
+        } else if (post.likes.includes(session.user?.email)) {
+            // user already liked post, unlike
+            console.log('within else if')
         } else {
-            //graphcms.request(LIKEPOST, {id, username})
-            console.log(session.user?.email)
+            // user not yet liked post, like
+            likes.push(session.user?.email)
+            graphcms.request(LIKEPOST, {id, likes})
+            console.log('within else')
         }
     }
 
@@ -126,8 +119,7 @@ export default function BlogPost({ post }: {post:any}) {
         <main className='font-FiraCode bg-gradient-to-br from-c-charcoal to-c-blue text-c-white h-screen min-h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-c-green scrollbar-track-c-blue'>
             <div className='h-full flex flex-col justify-between'>
                 <div>
-                    <button onClick={loadLikes}>Click me!</button>
-
+                    
                     {
                         show && <div className='flex flex-col justify-center items-center h-screen w-screen fixed bg-c-blue bg-opacity-50'>
                                     <div className='flex flex-col justify-center items-center bg-gradient-to-br from-c-charcoal to-c-blue shadow-2xl py-10 px-24 rounded-xl gap-y-8'>
