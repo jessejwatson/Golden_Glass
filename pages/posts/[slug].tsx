@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { GraphQLClient, gql } from 'graphql-request'
 import NavBar from '../../components/navBar';
-import { AiOutlineArrowLeft, AiOutlineShareAlt, AiOutlineLike } from 'react-icons/ai'
+import { AiOutlineArrowLeft, AiOutlineShareAlt, AiOutlineLike, AiFillLike } from 'react-icons/ai'
 import Link from 'next/link';
 import FooterIcons from '../../components/footerIcons'
 import styles from '../../styles/Slug.module.css'
 import ShareScreen from '../../components/shareScreen';
+import { getSession, useSession } from 'next-auth/react';
+import { Context } from 'vm';
+import router from 'next/router';
 
 const graphcms = new GraphQLClient(
     'https://api-ap-southeast-2.hygraph.com/v2/clazxnzw1231r01uhc0ke79zu/master'
@@ -31,6 +34,7 @@ const QUERY = gql
       coverImage {
         url
       }
+      likes
     }
   }
 `;
@@ -41,6 +45,20 @@ const SLUGLIST = gql`
             slug
         }
     }
+`;
+
+
+const LIKEPOST = gql`
+  mutation likePost($id: ID!, $likes: [String!]) {
+    updatePost(where: {id: $id}, data: {likes: $likes}) {
+      id
+      likes
+    }
+    publishPost(where: {id: $id}, to: [PUBLISHED]) {
+      id
+      likes
+    }
+  }  
 `;
   
 export async function getStaticPaths() {
@@ -62,18 +80,57 @@ export async function getStaticProps({ params }: {params:any}) {
     props: {
       post,
     },
-    revalidate: 10,
+    revalidate: 1,
   };
 }
 
 export default function BlogPost({ post }: {post:any}) {
-    const [show, setShow] = useState(false);
+    let likeIcon = <AiOutlineLike color='#221D23' size={25}/>
+    const [show, setShow] = useState(false)
+    const { data: session } = useSession()
+    const id = post.id
+    const likes:any[] = post.likes
+    let numLikes = likes.length
+
+    if (post.likes?.includes(session?.user?.email)) {
+        likeIcon = <AiFillLike color='#221D23' size={25}/>
+    } else {
+        likeIcon = <AiOutlineLike color='#221D23' size={25}/>
+    }
+
+    function changeLikeIcon() {
+        if (likeIcon == <AiOutlineLike color='#221D23' size={25}/>) {
+            likeIcon = <AiFillLike color='#221D23' size={25}/>
+        } else {
+            likeIcon = <AiOutlineLike color='#221D23' size={25}/>
+        }
+    }
+
+    function likeBtn() {
+        // save slug for later
+        localStorage.setItem("postSlug", post.slug)
+
+        // if user logged in, add like to article; else login
+        if (!session) {
+            router.push('/login')
+        } else if (post.likes.includes(session.user?.email)) {
+            // user already liked post, unlike
+            const index = post.likes.indexOf(session.user?.email)
+            likes.splice(index)
+            graphcms.request(LIKEPOST, {id, likes})
+        } else {
+            // user not yet liked post, like
+            likes.push(session.user?.email)
+            graphcms.request(LIKEPOST, {id, likes})
+        }
+
+    }
 
     return (
         <main className='font-FiraCode bg-gradient-to-br from-c-charcoal to-c-blue text-c-white h-screen min-h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-c-green scrollbar-track-c-blue'>
             <div className='h-full flex flex-col justify-between'>
                 <div>
-
+                    
                     {
                         show && <div className='flex flex-col justify-center items-center h-screen w-screen fixed bg-c-blue bg-opacity-50' onClick={()=>setShow(!show)}>
                                     <div className='flex flex-col justify-center items-center bg-gradient-to-br from-c-charcoal to-c-blue shadow-2xl py-10 px-24 rounded-xl gap-y-8'>
@@ -103,9 +160,9 @@ export default function BlogPost({ post }: {post:any}) {
                                 <div onClick={()=>setShow(!show)}>
                                     <div className='p-1.5 bg-c-white shadow-2xl rounded-full w-fit hover:translate-y-1 active:opacity-90'><AiOutlineShareAlt color='#221D23' size={25}/></div>
                                 </div>
-                                <Link href={''}>
-                                    <div className='p-1.5 bg-c-white shadow-2xl rounded-full w-fit hover:translate-y-1 active:opacity-90'><AiOutlineLike color='#221D23' size={25}/></div>
-                                </Link>
+                                <button onClick={likeBtn}>
+                                    <div className='p-1.5 bg-c-white shadow-2xl rounded-full w-fit hover:translate-y-1 active:opacity-90'>{likeIcon}</div>
+                                </button>
                             </div>
                         </div>
                     </section>
@@ -124,8 +181,13 @@ export default function BlogPost({ post }: {post:any}) {
                                     </div>
                                 </div>
                                 
-                                <div className='my-auto'>
-                                    <p className='text-xl'>{post.publishDate}</p>
+                                <div>
+                                    <div className='my-auto text-c-grey'>
+                                        <p>Likes: <span className='text-c-green'>{numLikes}</span></p>
+                                    </div>
+                                    <div className='my-auto'>
+                                        <p className='text-xl'>{post.publishDate}</p>
+                                    </div>
                                 </div>
                             </div>
                             <h1 className='text-4xl pb-2'>{post.title}</h1>
