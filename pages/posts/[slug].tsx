@@ -96,17 +96,17 @@ export default function BlogPost({ post }: {post:any}) {
 
     function getCorrectLikeIcon() {
         if (post.likes?.includes(session?.user?.email)) {
-            setLikeIcon( () => <AiFillLike color='#221D23' size={25}/>)
+            setLikeIcon(<AiFillLike color='#221D23' size={25}/>)
         } else {
-            setLikeIcon( () => <AiOutlineLike color='#221D23' size={25}/>)
+            setLikeIcon(<AiOutlineLike color='#221D23' size={25}/>)
         }
     }
 
     function changeLikeIcon() {
         if (likeIcon == <AiOutlineLike color='#221D23' size={25}/>) {
-            setLikeIcon( () => <AiFillLike color='#221D23' size={25}/>)
+            setLikeIcon(<AiFillLike color='#221D23' size={25}/>)
         } else {
-            setLikeIcon( () => <AiOutlineLike color='#221D23' size={25}/>)
+            setLikeIcon(<AiOutlineLike color='#221D23' size={25}/>)
         }
     }
 
