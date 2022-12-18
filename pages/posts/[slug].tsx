@@ -194,6 +194,7 @@ export default function BlogPost({ post }: {post:any}) {
                                     </div>
                                 </div>
                             </div>
+                            <p className=' text-c-green'>Note from developer: the like button is currently functional but not to it's fullest potential. Working on it as you read...</p>
                             <h1 className='text-4xl pb-2'>{post.title}</h1>
                             <div className='w-screen max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl'>
                                 <div dangerouslySetInnerHTML={{ __html: post.content.html }} className={styles.content}></div>
