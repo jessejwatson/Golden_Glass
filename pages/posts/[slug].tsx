@@ -85,24 +85,28 @@ export async function getStaticProps({ params }: {params:any}) {
 }
 
 export default function BlogPost({ post }: {post:any}) {
-    let likeIcon = <AiOutlineLike color='#221D23' size={25}/>
+    //let likeIcon = <AiOutlineLike color='#221D23' size={25}/>
+    const [likeIcon, setLikeIcon] = useState( () => <AiOutlineLike color='#221D23' size={25}/>)
     const [show, setShow] = useState(false)
     const { data: session } = useSession()
     const id = post.id
     const likes:any[] = post.likes
-    let numLikes = likes.length
+    let numLikes = likes.length;
+    () => getCorrectLikeIcon()
 
-    if (post.likes?.includes(session?.user?.email)) {
-        likeIcon = <AiFillLike color='#221D23' size={25}/>
-    } else {
-        likeIcon = <AiOutlineLike color='#221D23' size={25}/>
+    function getCorrectLikeIcon() {
+        if (post.likes?.includes(session?.user?.email)) {
+            setLikeIcon( () => <AiFillLike color='#221D23' size={25}/>)
+        } else {
+            setLikeIcon( () => <AiOutlineLike color='#221D23' size={25}/>)
+        }
     }
 
     function changeLikeIcon() {
         if (likeIcon == <AiOutlineLike color='#221D23' size={25}/>) {
-            likeIcon = <AiFillLike color='#221D23' size={25}/>
+            setLikeIcon( () => <AiFillLike color='#221D23' size={25}/>)
         } else {
-            likeIcon = <AiOutlineLike color='#221D23' size={25}/>
+            setLikeIcon( () => <AiOutlineLike color='#221D23' size={25}/>)
         }
     }
 
@@ -132,9 +136,9 @@ export default function BlogPost({ post }: {post:any}) {
                 <div>
                     
                     {
-                        show && <div className='flex flex-col justify-center items-center h-screen w-screen fixed bg-c-blue bg-opacity-50' onClick={()=>setShow(!show)}>
+                        show && <div className='flex flex-col justify-center items-center h-screen w-screen fixed bg-c-blue bg-opacity-50' onClick={() => setShow(!show)}>
                                     <div className='flex flex-col justify-center items-center bg-gradient-to-br from-c-charcoal to-c-blue shadow-2xl py-10 px-24 rounded-xl gap-y-8'>
-                                        <button className='hover:bg-c-blue active:opacity-90 border-c-green border-2 text-c-green rounded-full py-2 px-5' onClick={()=>setShow(!show)}>Close</button>
+                                        <button className='hover:bg-c-blue active:opacity-90 border-c-green border-2 text-c-green rounded-full py-2 px-5' onClick={() => setShow(!show)}>Close</button>
                                         <ShareScreen slug={post.slug} title={post.title}/>
                                     </div>
                                 </div>
@@ -157,10 +161,10 @@ export default function BlogPost({ post }: {post:any}) {
                                 </Link>
                             </div>
                             <div className='flex gap-x-4'>
-                                <div onClick={()=>setShow(!show)}>
+                                <div onClick={() => setShow(!show)}>
                                     <div className='p-1.5 bg-c-white shadow-2xl rounded-full w-fit hover:translate-y-1 active:opacity-90'><AiOutlineShareAlt color='#221D23' size={25}/></div>
                                 </div>
-                                <button onClick={function(event){ likeBtn(); changeLikeIcon()}}>
+                                <button onClick={() => { likeBtn(); changeLikeIcon()}}>
                                     <div className='p-1.5 bg-c-white shadow-2xl rounded-full w-fit hover:translate-y-1 active:opacity-90'>{likeIcon}</div>
                                 </button>
                             </div>
