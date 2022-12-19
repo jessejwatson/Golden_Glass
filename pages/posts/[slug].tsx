@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { GraphQLClient, gql } from 'graphql-request'
 import NavBar from '../../components/navBar';
 import { AiOutlineArrowLeft, AiOutlineShareAlt, AiOutlineLike, AiFillLike } from 'react-icons/ai'
@@ -163,16 +163,6 @@ export default function BlogPost({ post }: {post:any}) {
         }
 
     }
-
-    const [time, setTime] = useState(new Date())
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-          setTime(new Date());
-        }, 1000);
-
-        return () => clearInterval(interval);
-    }, []);
 
     return (
         <main className='font-FiraCode bg-gradient-to-br from-c-charcoal to-c-blue text-c-white h-screen min-h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-c-green scrollbar-track-c-blue'>
