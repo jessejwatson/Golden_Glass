@@ -92,13 +92,16 @@ export default function BlogPost({ post }: {post:any}) {
     const id = post.id
     const likes:any[] = post.likes
     let numLikes = likes.length;
-    
-    if (post.likes?.includes(session?.user?.email)) {
+    () => getCorrectLikeIcon
+
+    function getCorrectLikeIcon() {
+        if (post.likes?.includes(session?.user?.email)) {
             //setLikeIcon(true)
             likeIcon = true
         } else {
             //setLikeIcon(false)
             likeIcon = false
+        }
     }
     
     function changeLikeIcon() {
