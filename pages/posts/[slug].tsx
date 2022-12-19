@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { GraphQLClient, gql } from 'graphql-request'
 import NavBar from '../../components/navBar';
 import { AiOutlineArrowLeft, AiOutlineShareAlt, AiOutlineLike, AiFillLike } from 'react-icons/ai'
@@ -10,35 +10,6 @@ import { getSession, useSession } from 'next-auth/react';
 import { Context } from 'vm';
 import router from 'next/router';
 //import LikeBtn from '../../components/likeBtn';
-
-const LikeBtn = (props:any) => {
-    const [likedState, setLikedState] = useState(props.liked)
-    const [time, setTime] = useState(new Date())
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-          setTime(new Date());
-        }, 1000);
-
-        return () => clearInterval(interval);
-    }, []);
-        
-    return (
-        <div className='p-1.5 bg-c-white shadow-2xl rounded-full w-fit hover:translate-y-1 active:opacity-90' onClick={() => {
-            if (likedState) {
-                setLikedState(false)
-            } else {
-                setLikedState(true)
-            }
-        }}>
-            {
-                (likedState && <AiFillLike color='#221D23' size={25}/>)
-                ||
-                (!likedState && <AiOutlineLike color='#221D23' size={25}/>)
-            }
-        </div>
-    )
-}
 
 const graphcms = new GraphQLClient(
     'https://api-ap-southeast-2.hygraph.com/v2/clazxnzw1231r01uhc0ke79zu/master'
@@ -115,8 +86,8 @@ export async function getStaticProps({ params }: {params:any}) {
 }
 
 export default function BlogPost({ post }: {post:any}) {
-    //const [likeIcon, setLikeIcon] = useState(false)
-    let likeIcon = false
+    const [likeIcon, setLikeIcon] = useState(false)
+    //let likeIcon = false
     const [likedState, setLikedState] = useState(likeIcon)
     const [show, setShow] = useState(false)
     const { data: session } = useSession()
@@ -124,23 +95,30 @@ export default function BlogPost({ post }: {post:any}) {
     const likes:any[] = post.likes
     let numLikes = likes.length;
 
-        if (post.likes?.includes(session?.user?.email)) {
-            //setLikeIcon(true)
-            likeIcon = true
-            console.log("in if")
-        } else {
-            //setLikeIcon(false)
-            likeIcon = false
-            console.log("in else")
-        }
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (post.likes?.includes(session?.user?.email)) {
+                setLikeIcon(true)
+                //likeIcon = true
+                console.log("in if")
+            } else {
+                setLikeIcon(false)
+                //likeIcon = false
+                console.log("in else")
+            }
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
+        
     
     function changeLikeIcon() {
         if (likeIcon) {
-            //setLikeIcon(false)
-            likeIcon = false
+            setLikeIcon(false)
+            //likeIcon = false
         } else {
-            //setLikeIcon(true)
-            likeIcon = true
+            setLikeIcon(true)
+            //likeIcon = true
         }
     }
 
