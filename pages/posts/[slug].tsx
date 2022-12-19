@@ -170,9 +170,9 @@ export default function BlogPost({ post }: {post:any}) {
                                     <div className='p-1.5 bg-c-white shadow-2xl rounded-full w-fit hover:translate-y-1 active:opacity-90'><AiOutlineShareAlt color='#221D23' size={25}/></div>
                                 </div>
                                 <button onClick={() => { likeBtn(); changeLikeIcon()}}>
-                                    <div className='p-1.5 bg-c-white shadow-2xl rounded-full w-fit hover:translate-y-1 active:opacity-90'>{
+                                    {
                                         <LikeBtn liked={likeIcon}/>
-                                    }</div>
+                                    }
                                 </button>
                             </div>
                         </div>
