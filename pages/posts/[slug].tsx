@@ -85,16 +85,18 @@ export async function getStaticProps({ params }: {params:any}) {
 }
 
 export default function BlogPost({ post }: {post:any}) {
-    //let likeIcon = <AiOutlineLike color='#221D23' size={25}/>
-    //filled - <AiFillLike color='#221D23' size={25}/>
-    //outline - <AiOutlineLike color='#221D23' size={25}/>
     const [likeIcon, setLikeIcon] = useState(false)
     const [show, setShow] = useState(false)
     const { data: session } = useSession()
     const id = post.id
     const likes:any[] = post.likes
     let numLikes = likes.length;
-    () => getCorrectLikeIcon()
+    let numLikesLoaded = 0
+
+    while (numLikesLoaded == 0) {
+        () => getCorrectLikeIcon()
+        numLikesLoaded = 1
+    }
 
     function getCorrectLikeIcon() {
         if (post.likes?.includes(session?.user?.email)) {
