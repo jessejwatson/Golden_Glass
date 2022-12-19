@@ -9,6 +9,7 @@ import ShareScreen from '../../components/shareScreen';
 import { getSession, useSession } from 'next-auth/react';
 import { Context } from 'vm';
 import router from 'next/router';
+import LikeBtn from '../../components/likeBtn';
 
 const graphcms = new GraphQLClient(
     'https://api-ap-southeast-2.hygraph.com/v2/clazxnzw1231r01uhc0ke79zu/master'
@@ -170,9 +171,7 @@ export default function BlogPost({ post }: {post:any}) {
                                 </div>
                                 <button onClick={() => { likeBtn(); changeLikeIcon()}}>
                                     <div className='p-1.5 bg-c-white shadow-2xl rounded-full w-fit hover:translate-y-1 active:opacity-90'>{
-                                        (likeIcon && <AiFillLike color='#221D23' size={25}/>)
-                                        ||
-                                        (!likeIcon && <AiOutlineLike color='#221D23' size={25}/>)
+                                        <LikeBtn liked={likeIcon}/>
                                     }</div>
                                 </button>
                             </div>
