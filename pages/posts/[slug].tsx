@@ -86,7 +86,9 @@ export async function getStaticProps({ params }: {params:any}) {
 
 export default function BlogPost({ post }: {post:any}) {
     //let likeIcon = <AiOutlineLike color='#221D23' size={25}/>
-    const [likeIcon, setLikeIcon] = useState( () => <AiOutlineLike color='#221D23' size={25}/>)
+    //filled - <AiFillLike color='#221D23' size={25}/>
+    //outline - <AiOutlineLike color='#221D23' size={25}/>
+    const [likeIcon, setLikeIcon] = useState(false)
     const [show, setShow] = useState(false)
     const { data: session } = useSession()
     const id = post.id
@@ -96,17 +98,17 @@ export default function BlogPost({ post }: {post:any}) {
 
     function getCorrectLikeIcon() {
         if (post.likes?.includes(session?.user?.email)) {
-            setLikeIcon(<AiFillLike color='#221D23' size={25}/>)
+            setLikeIcon(true)
         } else {
-            setLikeIcon(<AiOutlineLike color='#221D23' size={25}/>)
+            setLikeIcon(false)
         }
     }
 
     function changeLikeIcon() {
-        if (likeIcon == <AiOutlineLike color='#221D23' size={25}/>) {
-            setLikeIcon(<AiFillLike color='#221D23' size={25}/>)
+        if (likeIcon) {
+            setLikeIcon(false)
         } else {
-            setLikeIcon(<AiOutlineLike color='#221D23' size={25}/>)
+            setLikeIcon(true)
         }
     }
 
@@ -165,7 +167,11 @@ export default function BlogPost({ post }: {post:any}) {
                                     <div className='p-1.5 bg-c-white shadow-2xl rounded-full w-fit hover:translate-y-1 active:opacity-90'><AiOutlineShareAlt color='#221D23' size={25}/></div>
                                 </div>
                                 <button onClick={() => { likeBtn(); changeLikeIcon()}}>
-                                    <div className='p-1.5 bg-c-white shadow-2xl rounded-full w-fit hover:translate-y-1 active:opacity-90'>{likeIcon}</div>
+                                    <div className='p-1.5 bg-c-white shadow-2xl rounded-full w-fit hover:translate-y-1 active:opacity-90'>{
+                                        (likeIcon && <AiFillLike color='#221D23' size={25}/>)
+                                        ||
+                                        (!likeIcon && <AiOutlineLike color='#221D23' size={25}/>)
+                                    }</div>
                                 </button>
                             </div>
                         </div>
