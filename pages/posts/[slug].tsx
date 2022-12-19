@@ -95,21 +95,23 @@ export default function BlogPost({ post }: {post:any}) {
     const likes:any[] = post.likes
     let numLikes = likes.length;
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if (post.likes?.includes(session?.user?.email)) {
-                setLikeIcon(true)
-                //likeIcon = true
-                console.log("in if")
-            } else {
-                setLikeIcon(false)
-                //likeIcon = false
-                console.log("in else")
-            }
-        }, 1000);
-
-        return () => clearInterval(interval);
-    }, []);
+    for (let i = 0; i < 5; i++) {
+        useEffect(() => {
+            const interval = setInterval(() => {
+                if (post.likes?.includes(session?.user?.email)) {
+                    setLikeIcon(true)
+                    //likeIcon = true
+                    console.log("in if")
+                } else {
+                    setLikeIcon(false)
+                    //likeIcon = false
+                    console.log("in else")
+                }
+            }, 1000);
+    
+            return () => clearInterval(interval);
+        }, []);
+    }
         
     
     function changeLikeIcon() {
