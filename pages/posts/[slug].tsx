@@ -85,32 +85,29 @@ export async function getStaticProps({ params }: {params:any}) {
 }
 
 export default function BlogPost({ post }: {post:any}) {
-    const [likeIcon, setLikeIcon] = useState(false)
+    //const [likeIcon, setLikeIcon] = useState(false)
+    let likeIcon = false
     const [show, setShow] = useState(false)
     const { data: session } = useSession()
     const id = post.id
     const likes:any[] = post.likes
     let numLikes = likes.length;
-    let numLikesLoaded = 0
-
-    while (numLikesLoaded == 0) {
-        () => getCorrectLikeIcon()
-        numLikesLoaded = 1
-    }
-
-    function getCorrectLikeIcon() {
-        if (post.likes?.includes(session?.user?.email)) {
-            setLikeIcon(true)
+    
+    if (post.likes?.includes(session?.user?.email)) {
+            //setLikeIcon(true)
+            likeIcon = true
         } else {
-            setLikeIcon(false)
-        }
+            //setLikeIcon(false)
+            likeIcon = false
     }
-
+    
     function changeLikeIcon() {
         if (likeIcon) {
-            setLikeIcon(false)
+            //setLikeIcon(false)
+            likeIcon = false
         } else {
-            setLikeIcon(true)
+            //setLikeIcon(true)
+            likeIcon = true
         }
     }
 
@@ -124,7 +121,7 @@ export default function BlogPost({ post }: {post:any}) {
         } else if (post.likes.includes(session.user?.email)) {
             // user already liked post, unlike
             const index = post.likes.indexOf(session.user?.email)
-            likes.splice(index)
+            likes.splice(index, 1)
             graphcms.request(LIKEPOST, {id, likes})
         } else {
             // user not yet liked post, like
