@@ -88,7 +88,7 @@ export async function getStaticProps({ params }: {params:any}) {
 export default function BlogPost({ post }: {post:any}) {
     const [likeIcon, setLikeIcon] = useState(false)
     //let likeIcon = false
-    //const [likedState, setLikedState] = useState(likeIcon)
+    const [likedState, setLikedState] = useState(likeIcon)
     const [show, setShow] = useState(false)
     const { data: session } = useSession()
     const id = post.id
@@ -180,16 +180,16 @@ export default function BlogPost({ post }: {post:any}) {
                                 </div>
                                 <button onClick={() => { likeBtn(); changeLikeIcon()}}>
                                     <div className='p-1.5 bg-c-white shadow-2xl rounded-full w-fit hover:translate-y-1 active:opacity-90' onClick={() => {
-                                        if (likeIcon) {
-                                            setLikeIcon(false)
+                                        if (likedState) {
+                                            setLikedState(false)
                                         } else {
-                                            setLikeIcon(true)
+                                            setLikedState(true)
                                         }
                                     }}>
                                         {
-                                            (likeIcon && <AiFillLike color='#221D23' size={25}/>)
+                                            (likedState && <AiFillLike color='#221D23' size={25}/>)
                                             ||
-                                            (!likeIcon && <AiOutlineLike color='#221D23' size={25}/>)
+                                            (!likedState && <AiOutlineLike color='#221D23' size={25}/>)
                                         }
                                     </div>
                                 </button>
