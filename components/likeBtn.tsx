@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { AiFillLike, AiOutlineLike } from "react-icons/ai"
 
-export default function LikeBtn({ liked }: {liked:boolean}) {
-    const [likedState, setLikedState] = useState(liked)
+const LikeBtn = (props:any) => {
+    const [likedState, setLikedState] = useState(props.liked)
     const [time, setTime] = useState(new Date())
 
     useEffect(() => {
