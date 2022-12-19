@@ -97,9 +97,11 @@ export default function BlogPost({ post }: {post:any}) {
         if (post.likes?.includes(session?.user?.email)) {
             //setLikeIcon(true)
             likeIcon = true
+            console.log("in if")
         } else {
             //setLikeIcon(false)
             likeIcon = false
+            console.log("in else")
         }
     
     function changeLikeIcon() {
