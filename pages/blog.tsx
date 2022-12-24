@@ -28,6 +28,7 @@ export async function getStaticProps() {
           coverImage {
             url
           }
+          likes
         }
       }
     `
@@ -51,7 +52,7 @@ export default function BlogList({ posts }: {posts:any[]}) {
           <main className='pt-10 mb-auto'>
             <div className="flex flex-wrap flex-col gap-y-10 content-center">
               {posts.map((post) => (
-                <BlogCard key={'key'} title={post.title} publishDate={post.publishDate} slug={post.slug} contentHTML={post.content.html} authorName={post.author.name} avatarURL={post.author.avatar.url} coverImageURL={post.coverImage.url}/>
+                <BlogCard key={'key'} title={post.title} publishDate={post.publishDate} slug={post.slug} contentHTML={post.content.html} authorName={post.author.name} avatarURL={post.author.avatar.url} coverImageURL={post.coverImage.url} numLikes={post.likes.length}/>
               )).reverse()}
             </div>
           </main>
