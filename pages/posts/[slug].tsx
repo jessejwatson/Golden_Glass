@@ -97,7 +97,7 @@ export default function BlogPost({ post }: {post:any}) {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (post.likes?.includes(session?.user?.email)) {
+            if (post?.likes?.includes(session?.user?.email)) {
                 setLikeIcon(true)
                 //likeIcon = true
             } else {
