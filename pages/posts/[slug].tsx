@@ -87,8 +87,6 @@ export async function getStaticProps({ params }: {params:any}) {
 
 export default function BlogPost({ post }: {post:any}) {
     const [likeIcon, setLikeIcon] = useState(false)
-    //let likeIcon = false
-    //const [likedState, setLikedState] = useState(likeIcon)
     const [show, setShow] = useState(false)
     const { data: session } = useSession()
     const id = post.id
@@ -97,15 +95,10 @@ export default function BlogPost({ post }: {post:any}) {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            console.log(post.likes + "\n" + session?.user?.email)
             if (post.likes?.includes(session?.user?.email)) {
                 setLikeIcon(true)
-                //likeIcon = true
-                console.log("in if")
             } else {
                 setLikeIcon(false)
-                //likeIcon = false
-                console.log("in else")
             }
         }, 1000);
 
