@@ -42,6 +42,7 @@ a {
 img {
   box-shadow: -6px 6px #000;
   border-radius: .5rem;
+  transition: transform .2s;
 }
 
 img:hover {

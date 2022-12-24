@@ -6,7 +6,7 @@ export default function BlogCard({title, publishDate, slug, contentHTML, authorN
   return (
     <div>
         <Link href={'/posts/' + slug}>
-            <div className='p-2 bg-c-grey bg-opacity-5 rounded-lg animate-fade-in-up max-w-3xl flex justify-between gap-x-10 hover:translate-y-2 active:opacity-90 shadow-lg hover:shadow-md'>
+            <div className='p-2 bg-c-grey bg-opacity-5 rounded-lg animate-fade-in-up max-w-3xl flex justify-between gap-x-10 hover:translate-y-2 hover:transition-transform active:opacity-90 shadow-lg hover:shadow-md'>
                 <div className='text-xl w-full'>
                     <h1 className=''>{title}</h1>
                     <p className='text-sm text-c-grey'>Published: <span className='text-c-green'>{publishDate}</span></p>
