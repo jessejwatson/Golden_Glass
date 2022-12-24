@@ -189,8 +189,6 @@ export default function BlogPost({ post }: {post:any}) {
                     {/* Title and content */}
                     <section className='mb-auto px-10 pt-5 pb-5 flex justify-center animate-fade-in-up'>
                         <div className='font-CormorantG'>
-                            {/*<h1 className='text-2xl text-c-green pb-6'>Note: blog is in alpha. Share and Like buttons are not functional.</h1>*/}
-                            {/* Author and publish date */}
                             <div className='flex justify-between font-semibold border-b-2 border-c-grey p-2 mb-4'>
                                 <div className='flex gap-x-4 pb-2'>
                                     <img className='flatImg w-12 h-auto my-auto' src={post.author.avatar.url} alt="Author Avatar" />
@@ -209,7 +207,6 @@ export default function BlogPost({ post }: {post:any}) {
                                     </div>
                                 </div>
                             </div>
-                            <p className=' text-c-green'>Note from developer: the like button is currently functional but not to it&apos;s fullest potential. Working on it as you read...</p>
                             <h1 className='text-4xl pb-2'>{post.title}</h1>
                             <div className='w-screen max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl'>
                                 <div dangerouslySetInnerHTML={{ __html: post.content.html }} className={styles.content}></div>
