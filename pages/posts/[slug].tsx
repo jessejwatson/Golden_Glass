@@ -99,8 +99,6 @@ export default function BlogPost({ post }: {post:any}) {
                 setLikeIcon(true)
             } else {
                 setLikeIcon(false)
-            } else {
-                setLikeIcon(false)
             }
         }, 1000);
 
