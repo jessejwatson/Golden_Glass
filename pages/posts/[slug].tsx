@@ -97,7 +97,7 @@ export default function BlogPost({ post }: {post:any}) {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (post?.likes?.includes(session?.user?.email)) {
+            if (post.likes?.includes(session?.user?.email)) {
                 setLikeIcon(true)
                 //likeIcon = true
             } else {
@@ -106,9 +106,8 @@ export default function BlogPost({ post }: {post:any}) {
             }
         }, 1000);
 
-        //return () => clearInterval(interval);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [post]);
+        return () => clearInterval(interval);
+    }, []);
     
     function changeLikeIcon() {
         if (likeIcon) {
