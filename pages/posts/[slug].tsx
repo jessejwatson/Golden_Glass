@@ -99,11 +99,13 @@ export default function BlogPost({ post }: {post:any}) {
                 setLikeIcon(true)
             } else {
                 setLikeIcon(false)
+            } else {
+                setLikeIcon(false)
             }
         }, 1000);
 
         return () => clearInterval(interval);
-    }, []);
+    });
     
     function changeLikeIcon() {
         if (likeIcon) {
