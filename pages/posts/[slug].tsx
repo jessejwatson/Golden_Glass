@@ -107,7 +107,7 @@ export default function BlogPost({ post }: {post:any}) {
         }, 1000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [post, session]);
     
     function changeLikeIcon() {
         if (likeIcon) {
