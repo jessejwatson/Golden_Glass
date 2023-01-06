@@ -5,11 +5,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    screens: {
-      '2xs': '280px',
-      // => @media (min-width: 350px) { ... }
-
-      'xs': '350px',
+    screens: {'xs': '350px',
       // => @media (min-width: 350px) { ... }
 
       'sm': '640px',
