@@ -7,7 +7,7 @@ export default function MyHealth() {
             <h1 className='text-xl font-semibold'>My Health (uni project)</h1>
             <Image className='coverImg' src={myHealthImg} alt={'Profile Picture'} width={500}/>
             <p className='max-w-lg'>MyHealth is a desktop app developed to keep track of health records. This was the first app I built with a GUI. I completed it in my first year of university as an assignment.</p>
-            <a className="text-c-green hover:underline" href="/post/How-I-Built-The-MyHealth-App">See how I made it here &gt;</a>
+            <a className="text-c-green hover:underline" href="/ProjectsList">See how I made it here &gt;</a>
         </div>
     )
 }
