@@ -48,6 +48,13 @@
     margin-bottom: 2rem;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: none;
+    border-radius: .5rem;
+    transition: transform .2s;
+}
+
+.content img:hover {
+    transform: translateY(6px)
 }
 
 .content blockquote {
