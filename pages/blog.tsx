@@ -49,7 +49,7 @@ export default function BlogList({ posts }: {posts:any[]}) {
           <div>
             <NavBar/>
           </div>
-          <main className='pt-10 mb-auto'>
+          <main className='py-10 mb-auto'>
             <div className="flex flex-wrap flex-col gap-y-10 content-center px-6 md:px-0">
               {posts.map((post) => (
                 <BlogCard key={'key'} title={post.title} publishDate={post.publishDate} slug={post.slug} contentHTML={post.content.html} authorName={post.author.name} avatarURL={post.author.avatar.url} coverImageURL={post.coverImage.url} numLikes={post.likes.length}/>
