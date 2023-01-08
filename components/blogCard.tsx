@@ -17,7 +17,7 @@ export default function BlogCard({title, publishDate, slug, contentHTML, authorN
                     </div>
                 </div>
                 <div className='w-3/12 my-auto hidden md:block'>
-                    <img className='flatImg' src={coverImageURL} alt="Cover Image" />
+                    <img className='flatImg h-24 w-36 object-cover m-auto' src={coverImageURL} alt="Cover Image" />
                 </div>
                 <div className='my-auto md:pr-6'>
                     <AiFillRightCircle size={30} color='#D3D4D9'/>
