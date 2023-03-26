@@ -13,8 +13,8 @@ export default function EduWorkex() {
             <div className="lg:max-w-sm">
                 <h1 className='text-3xl pb-2'>Work Experience</h1>
                 <ul className='list-disc pl-4'>
-                    <li>Fast-food Cook - McDonald’s - November, 2021 → to date</li>
-                    <li>Tiler’s Apprentice - Swish Tiling - August, 2020 → October, 2021</li>
+                    <li>Fast-food Cook - McDonald&apos;s - November, 2021 → to date</li>
+                    <li>Tiler&apos;s Apprentice - Swish Tiling - August, 2020 → October, 2021</li>
                 </ul>
             </div>
         </div>

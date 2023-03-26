@@ -36,7 +36,7 @@ export default function SkillsProjects() {
                     <li>
                         <a href="https://github.com/Jessals04/twd" target="_blank" rel="noopener noreferrer" className='flex gap-2 underline hover:no-underline'>
                             <HiOutlineExternalLink className='my-auto' />
-                            <h2>TrainWithDean - a PT's website | Uses NextJS</h2>
+                            <h2>TrainWithDean - a PT&apos;s website | Uses NextJS</h2>
                         </a>
                     </li>
                     <li>

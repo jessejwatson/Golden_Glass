@@ -6,7 +6,7 @@ export default function TopSection() {
         <div className="p-4 max-w-2xl h-full w-screen flex mx-auto">
             <div className="flex flex-col md:flex-row lg:flex-col gap-10">
                 <div className="">
-                    <Image className="noDrop border-2 border-resume-grey text-resume-dark-blue" src={profilePic} width="2507" />
+                    <Image className="noDrop border-2 border-resume-grey text-resume-dark-blue" src={profilePic} width="2507" alt="Profile Picture" />
                 </div>
                 <div className="mt-6 md:mt-0 lg:mt-6">
                     <h1 className='text-3xl pb-2'>Professional Summary</h1>
