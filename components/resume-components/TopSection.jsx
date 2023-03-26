@@ -13,6 +13,7 @@ export default function TopSection() {
                     <p>
                     IT student with troubleshooting, programming and other technical skills. I have experience in JavaScript, ReactJS, NextJS, Java, GraphQL, SQL and Python. Fixing computer issues is something I have been doing for years. I have studied the Bachelor of IT for a year at RMIT Online and have completed online courses on the side. My career goals include networking within the industry, learning to work well in an IT team, and eventually become a web developer using frameworks such as NextJS.
                     </p>
+                    <p>References available upon request.</p>
                 </div>
             </div>
         </div>
