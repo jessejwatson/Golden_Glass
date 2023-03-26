@@ -28,12 +28,18 @@ module.exports = {
       'c-blue': '#294051',
       'c-green': '#5AC494',
       'c-white': '#D3D4D9',
-      'c-grey': '#B3B4BD'
+      'c-grey': '#B3B4BD',
+      'resume-white': '#FAFAFA',
+      'resume-dark-blue': '#0A141F',
+      'resume-light-blue': '#0D6B96',
+      'resume-grey': '#82878D',
+      'resume-charcoal': '#303633'
     },
     extend: {
       fontFamily: {
         FiraCode: ["Fira Code"],
-        CormorantG: ["Cormorant Garamond"]
+        CormorantG: ["Cormorant Garamond"],
+        ABeeZee: ["ABeeZee"]
       },
       keyframes: {
         'fade-in-down': {
