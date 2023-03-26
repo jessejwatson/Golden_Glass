@@ -27,17 +27,23 @@ export default function SkillsProjects() {
             <div className='lg:max-w-sm'>
                 <h1 className='text-3xl pb-2'>Projects</h1>
                 <ul>
-                    <li className='flex gap-2'>
-                        <HiOutlineExternalLink className='my-auto' />
-                        <h2>Project 1</h2>
+                    <li>
+                        <a href="https://github.com/Jessals04/Golden_Glass" target="_blank" rel="noopener noreferrer" className='flex gap-2 underline hover:no-underline'>
+                            <HiOutlineExternalLink className='my-auto' />
+                            <h2>This Website - jessejwatson.com | Uses NextJS</h2>
+                        </a>
                     </li>
-                    <li className='flex gap-2'>
-                        <HiOutlineExternalLink className='my-auto' />
-                        <h2>Project 2</h2>
+                    <li>
+                        <a href="https://github.com/Jessals04/twd" target="_blank" rel="noopener noreferrer" className='flex gap-2 underline hover:no-underline'>
+                            <HiOutlineExternalLink className='my-auto' />
+                            <h2>TrainWithDean - a PT's website | Uses NextJS</h2>
+                        </a>
                     </li>
-                    <li className='flex gap-2'>
-                        <HiOutlineExternalLink className='my-auto' />
-                        <h2>Project 3</h2>
+                    <li>
+                        <a href="https://github.com/Jessals04/MinText" target="_blank" rel="noopener noreferrer" className='flex gap-2 underline hover:no-underline'>
+                            <HiOutlineExternalLink className='my-auto' />
+                            <h2>MinText | Uses ReactJS | In Progress</h2>
+                        </a>
                     </li>
                 </ul>
             </div>
