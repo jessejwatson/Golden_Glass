@@ -3,10 +3,6 @@ import profilePic from '../assets/profilePic.png'
 import tiling from '../assets/tiling.jpg'
 import bike from '../assets/bike.jpg'
 
-// Components
-import NavBar from './navBar'
-import Link from 'next/link'
-
 export default function BodyAboutMe() {
   return (
     <div className='px-16 flex justify-center content-center animate-fade-in-up'>

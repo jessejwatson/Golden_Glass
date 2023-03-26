@@ -1,7 +1,3 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-
 // Components
 import NavBar from '../components/navBar'
 import Body from '../components/body'
@@ -12,7 +8,7 @@ export default function Home() {
     <div className='h-fixed h-screen'>
       <div className='font-FiraCode bg-gradient-to-br from-c-charcoal to-c-blue text-c-white h-full'>
         <div className='h-full grid grid-flow-row'>
-          <div className=''>
+          <div>
             <NavBar/>
           </div>
 
