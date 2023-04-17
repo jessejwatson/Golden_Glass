@@ -16,7 +16,7 @@ export default function SkillsProjects() {
                         </ul>
                     </li>
                     <li>User Centred Design:
-                        <ul>
+                        <ul className='list-disc pl-6'>
                             <li>Sketching</li>
                             <li>Figma</li>
                         </ul>
@@ -26,22 +26,22 @@ export default function SkillsProjects() {
 
             <div className='lg:max-w-sm'>
                 <h1 className='text-3xl pb-2'>Projects</h1>
-                <ul>
+                <ul className=''>
                     <li>
-                        <a href="https://github.com/Jessals04/Golden_Glass" target="_blank" rel="noopener noreferrer" className='flex gap-2 underline hover:no-underline'>
-                            <HiOutlineExternalLink className='my-auto' />
+                        <a href="https://github.com/Jessals04/Golden_Glass" target="_blank" rel="noopener noreferrer" className='flex gap-2 underline hover:no-underline pb-2'>
+                            <HiOutlineExternalLink className='my-auto w-8' size={25} />
                             <h2>This Website - jessejwatson.com | Uses NextJS</h2>
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/Jessals04/twd" target="_blank" rel="noopener noreferrer" className='flex gap-2 underline hover:no-underline'>
-                            <HiOutlineExternalLink className='my-auto' />
+                        <a href="https://github.com/Jessals04/twd" target="_blank" rel="noopener noreferrer" className='flex gap-2 underline hover:no-underline pb-2'>
+                            <HiOutlineExternalLink className='my-auto w-8' size={25} />
                             <h2>TrainWithDean - a PT&apos;s website | Uses NextJS</h2>
                         </a>
                     </li>
                     <li>
                         <a href="https://github.com/Jessals04/MinText" target="_blank" rel="noopener noreferrer" className='flex gap-2 underline hover:no-underline'>
-                            <HiOutlineExternalLink className='my-auto' />
+                            <HiOutlineExternalLink className='my-auto' size={25} />
                             <h2>MinText | Uses ReactJS | In Progress</h2>
                         </a>
                     </li>

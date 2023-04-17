@@ -23,6 +23,16 @@ export default function PersonalInfo() {
         setPassword(target.value);
     }
 
+    // ------------------------------
+    // altered from
+    // https://reactgo.com/react-trigger-button-click/
+    const handleKeyDown = e => {
+        if (e.keyCode === 13) {
+            handleOnClickShowPersonalInfo()
+        }
+    };
+    // ------------------------------
+
     return (
         <div className="flex">
             {
@@ -46,7 +56,7 @@ export default function PersonalInfo() {
                     :
                     <div className="m-auto w-full p-4 bg-resume-charcoal text-resume-white flex gap-4">
                         <div className="m-auto">
-                            <input className="mr-2 px-2 rounded-md text-resume-dark-blue" value={password} type="password" placeholder="Enter password." onChange={handleOnChange} />
+                            <input className="mr-2 px-2 rounded-md text-resume-dark-blue" value={password} type="password" placeholder="Enter password." onChange={handleOnChange} onKeyDown={handleKeyDown} />
                             <button className="underline hover:no-underline" onClick={handleOnClickShowPersonalInfo}>Get Access</button>
                         </div>
                     </div>
