@@ -1,6 +1,4 @@
-import { useState } from "react";
 
-// import components
 import PersonalInfo from "../components/resume-components/PersonalInfo";
 import TopSection from "../components/resume-components/TopSection";
 import DarkBlueSection from "../components/resume-components/DarkBlueSection";
