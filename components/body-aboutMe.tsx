@@ -64,7 +64,21 @@ export default function BodyAboutMe() {
           When I left tiling I still needed to earn some coin, so I applied for a couple
           fast food places (McDonald&apos;s, KFC & Hungry Jacks - Australia&apos;s Burger King).
           The only place that got back to me was McDonald&apos;s (Maccas as us Aussies call it).
-          I got the job at Maccas and have been there to this day (a bit over a year).
+          I got the job at Maccas and was there for a year and a half - until...
+          </p>
+        </section>
+
+        <section className='pb-8'>
+          <h2 className='text-xl text-c-green'>Entering the industry...</h2>
+          <p className='text-c-grey'>
+          I completed one year of the IT degree aforementioned, then the university discontinued
+          the degree. I was given the option of full-time study with no breaks to complete it; I
+          opted for the less stressful option of transferring universities. However, I didn&apos;t
+          even get that far.<br />
+          By the time I decided to find another uni, it was too late to enrol for the year ahead,
+          so I waited. God had a plan, however, because I ended up getting offered a job at a private
+          school in the town I lived in - Systems Technician at Lindisfarne Anglican Grammar School.<br />
+          This is where I am now, and I love it.
           </p>
         </section>
 
@@ -91,8 +105,8 @@ export default function BodyAboutMe() {
           In my school years I played a lot of basketball. I was never into any other
           sport as a kid. I never joined a team, but I went down to the local PCYC
           every week for a lesson and quick game.<br/>
-          In the past year I have gotten into mountain biking. I ride the local <a className='externalLink' href={'https://goo.gl/maps/bssPdKvUMUjArwgKA'} target={'_blank'} rel="noreferrer">Currumbin
-          Border Trails</a> regularly. In the past month I have been initiated into the
+          In the past couple years I have gotten into mountain biking. I ride the local <a className='externalLink' href={'https://goo.gl/maps/bssPdKvUMUjArwgKA'} target={'_blank'} rel="noreferrer">Currumbin
+          Border Trails</a> regularly. In the past year I have been initiated into the
           climbing community in an indoor climbing gym in Robina on the Gold Coast — <a className='externalLink' href={'https://goo.gl/maps/xJtPu9t5wNZ5qVnC8'} target={'_blank'} rel="noreferrer">Alpine</a>.
           </p>
         </section>
@@ -104,6 +118,16 @@ export default function BodyAboutMe() {
           videos. I used my dad&apos;s work account to get Premiere Pro for free and learned how
           the program works. After making about 25 videos I lost a passion for it. However,
           I still desire to get back into it.
+          </p>
+        </section>
+
+        <section className='pb-8'>
+          <h2 className='text-xl text-c-green'>Technology...</h2>
+          <p className='text-c-grey'>
+          Lastly, I am working on a bunch of technical projects that involve smart home
+          automation and software development. I have learned ReactJS, NextJS (this
+          website&apos;s framework) and have started learning React Native. I also &apos;stole&apos;
+          a Raspbery Pi from work to use in my smart home automation endeavours.
           </p>
         </section>
 
