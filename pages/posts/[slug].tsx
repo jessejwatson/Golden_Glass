@@ -134,7 +134,7 @@ export default function BlogPost({ post }: {post:any}) {
     }
 
     return (
-        <main className='font-FiraCode bg-gradient-to-br from-c-charcoal to-c-blue text-c-white h-screen min-h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-c-green scrollbar-track-c-blue whitespace-pre-wrap'>
+        <main className='font-FiraCode bg-gradient-to-br from-c-charcoal to-c-blue text-c-white h-screen min-h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-c-green scrollbar-track-c-blue'>
             <div className='h-full flex flex-col justify-between'>
                 <div>
                     
@@ -207,8 +207,8 @@ export default function BlogPost({ post }: {post:any}) {
                                     </div>
                                 </div>
                             </div>
-                            <h1 className='px-6 md:px-0 text-4xl pb-2'>{post.title}</h1>
-                            <div className='px-6 md:px-0 w-screen max-w-xl md:max-w-2xl lg:max-w-3xl'>
+                            <h1 className='max-w-5xl px-6 md:px-0 text-4xl pb-2 whitespace-pre-wrap'>{post.title}</h1>
+                            <div className='px-6 md:px-0 w-screen max-w-xl md:max-w-2xl lg:max-w-3xl whitespace-pre-wrap mx-auto'>
                                 <div dangerouslySetInnerHTML={{ __html: post.content.html }} className={styles.content}></div>
                             </div>
                         </div>
