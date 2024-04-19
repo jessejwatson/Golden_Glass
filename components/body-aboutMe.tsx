@@ -16,9 +16,9 @@ export default function BodyAboutMe() {
             <p className='text-c-green'>So yeah, I&apos;m</p>
             <h1 className='text-3xl font-semibold'>Jesse Watson</h1>
             <p className='text-c-grey'>
-              As I said, I am a uni student studying at RMIT Online on the Gold Coast.
-              I love to code (Java, JS, React), write blog posts, play the guitar and sing.
-              I also love going to the gym, getting out doors mountain biking and climbing.
+              As I said, I am a Systems Technician at Lindisfarne Anglican Grammar School.
+              I love programming and building things in general. I also love jamming 🎸, working
+              out 💪, climbing 🧗, and camping/4wding 🏕️.
             </p>
           </div>
         </section>
@@ -126,8 +126,9 @@ export default function BodyAboutMe() {
           <p className='text-c-grey'>
           Lastly, I am working on a bunch of technical projects that involve smart home
           automation and software development. I have learned ReactJS, NextJS (this
-          website&apos;s framework) and have started learning React Native. I also &apos;stole&apos;
-          a Raspbery Pi from work to use in my smart home automation endeavours.
+          website&apos;s framework) and have started learning SwiftUI. I also &apos;stole&apos;
+          a Raspbery Pi from work to use in my smart home automation endeavours (I use Node-RED
+          along with Shelly blubs).
           </p>
         </section>
 
