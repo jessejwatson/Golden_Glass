@@ -13,9 +13,12 @@ export default function Body() {
           <p className='text-c-green'>Hi, I&apos;m</p>
           <h1 className='text-3xl font-semibold'>Jesse Watson</h1>
           <p className='text-c-grey'>
-            I am a uni student studying at RMIT Online on the Gold Coast. I
-            love to code (Java, JS, React) and write blog posts. I also have
-            other hobbies; click below to find out more...
+            I love to build things with code. I program in JS, ReactJS,
+            NextJS, Python and SwiftUI. I work at a private school in
+            Australia called Lindisfarne Anglican Grammar School building
+            things and helping people with tech.
+            <br>
+            Learn more about how I got here below...
           </p>
           <div className='pt-6'>
             <Link href={'/aboutMe'}>
