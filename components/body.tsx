@@ -18,6 +18,7 @@ export default function Body() {
             Australia called Lindisfarne Anglican Grammar School building
             things and helping people with tech.
             <br></br>
+            <br></br>
             Learn more about how I got here below...
           </p>
           <div className='pt-6'>
