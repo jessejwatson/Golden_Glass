@@ -17,7 +17,7 @@ export default function FooterIcons() {
           </a>
         </div>
         <div className='px-4 pt-2 pb-2 hover:animate-bounce'>
-          <a href="https://twitter.com/jessals04" target="_blank" rel="noreferrer">
+          <a href="https://x.com/jessejwatson_" target="_blank" rel="noreferrer">
             <SiTwitter color='#5AC494' fontSize={24}/>
           </a>
         </div>
@@ -27,7 +27,7 @@ export default function FooterIcons() {
           </a>
         </div>
         <div className='px-4 pt-2 pb-2 hover:animate-bounce'>
-          <a href="https://github.com/Jessals04/" target="_blank" rel="noreferrer">
+          <a href="https://github.com/jessejwatson/" target="_blank" rel="noreferrer">
             <SiGithub color='#5AC494' fontSize={24}/>
           </a>
         </div>
